@@ -1,0 +1,111 @@
+<html>
+<head>
+	<style>
+		body
+		{
+					font-family: 'Molle',cursive;  		  
+					    background:linear-gradient(180deg,#00c6a9,green);
+					   	}
+		.loginbox
+		{
+			margin-top: 30px;
+			width:45%;
+			height:480px;
+			margin-left: -10px;
+			background-color:blue;
+			font-size: 21px;
+             color:white;
+                             
+             			box-shadow:7px 7px 4px black;
+		}
+		.a
+		{
+			color:red;
+
+		}
+		.b
+		{
+			background-color:green;
+			border: red;
+			box-shadow:5px 5px 4px black;
+			height: 30px;
+			color:white;
+			border-radius: 10px;
+			width:110px;
+		     font-size: 21px;
+		}
+		.avtar
+         {
+         	width:100px;
+         	height:90px;
+         	border-radius: 50%;
+         	position:absolute;
+         	top:10px;
+         	left:625px;
+         	left:calc(50%,-50px);
+         }
+		.t
+		{
+		width:50px;
+         	height:70px;
+         	border-radius: 50%;
+         	position:absolute;
+         	left:calc(50%,-50px);
+         	
+		}
+		.f
+		{
+			color: white;
+			text-decoration: none;
+		}
+	</style>
+	<script language="javascript">
+	function validate()
+	{
+		var len=0;
+		var su=document.f1.username.value;
+		var sp=document.f1.password.value;
+		if(su=="")
+		{
+			alert("please input username");
+			document.f1.username.value="";
+			return false;
+		}
+		if(sp=="")
+	{
+		alert("please input password");
+		document.f1.password.value="";
+		return false;
+	}
+	else if(sp.length<6||sp.length>10)
+	{
+		alert("password not in range");
+		document.f1.name.value="";
+		return false;
+	}
+      return true;
+	}
+</script>
+
+</head>
+<body>
+	<center>
+	
+<div class="loginbox">
+	<form name="f1"ACTION="registerserver.php"method="post"onsubmit="return validate()" enctype="multipart/form-data">
+		<img src="15.jpg"class="avtar"><br>	
+	<h1>Register here</h1>
+	<b>USERNAME</b>: &nbsp;<input class="tb" type="text" name="username" value="" placeholder="Enter Username"required ><br>
+	<b>PASSWORD</b>:  <input class="tb" type="password" name="password" value="" placeholder="Enter password"required><br>
+	<b>EMAIL</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input class="tb" type="email" name="email" value="" placeholder="Enter email"required><br>
+	<b>MobileNo</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input class="tb" type="mobileno" name="mobileno" value="" placeholder="Enter Mobile No"required><br>
+    
+<br>
+	<input class="b"type="submit" name="submit" value="Register"><br>
+	<br><a href ="home.php"class="a">back</a>
+<br><a href="login.php"class="f">Already have an account ?</a>
+</div>
+</center>
+ </form>
+		</body>
+	</html>

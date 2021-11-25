@@ -1,0 +1,85 @@
+<html>
+<head>
+	<style>
+		a
+		{
+			text-decoration: none;
+			color: red;
+		}
+		body
+		{
+				font-family: 'Molle',cursive;
+				background-color: lightgreen;
+				background-image:url("slide_3.jpg"); 
+				background-repeat: no-repeat;		 		  
+		}	 		  			 		  		    	}
+		.loginbox
+		{
+			margin-top: 100px;
+			width:34%;
+			height:415px;
+			margin-left: -10px;
+			background-color:black;
+			font-size: 21px;
+            color: black;
+            background-image:url("p5.jpg");
+            box-shadow:7px 7px 4px black;
+		}
+		.a
+		{
+			color:red;
+
+		}
+		.b
+		{
+			background-color:green;
+			border: red;
+			box-shadow:5px 5px 4px black;
+			height: 30px;
+			color:white;
+			border-radius: 10px;
+			width:110px;
+		     font-size: 21px;
+		}
+		 
+
+	</style>
+	<script language="javascript">
+	function validate()
+	{
+		var len=0;
+		var su=document.f1.name.value;
+		var sp=document.f1.password.value;
+		if(su=="")
+		{
+			alert("please input username");
+			document.f1.name.value="";
+			return false;
+		}
+		if(sp=="")
+	{
+		alert("please input password");
+		document.f1.password.value="";
+		return false;
+	}
+      return true;
+	}
+</script>	
+</head>
+<body>
+	<center>
+<div class="loginbox">
+	<form name="f1" action="loginserver.php" method="post" onsubmit="return validate()">
+		<br>	
+	<h1>Login here</h1>
+	<b>USERNAME</b> : <input class="tb" type="text" name="name" value="" placeholder="Enter Username" ><br><br>
+	<b>PASSWORD </b>: <input class="tb" type="password" name="password" value="" placeholder="Enter password"><br><br>
+	<input class="b"type="submit" name="submit" value="LOGIN"><br>
+	<br><a href ="home.php"class="a">Back</a>
+	<br>Don't have an account<a href="uregister.php">REGISTER</a>
+</div>
+</center>
+ </form>
+		</body>
+	</html>
+ 
