@@ -16,5 +16,10 @@ def home():
    #return response.text
    # Code here will react to failed requests
    return render_template('index.html')
+
+@app.route('/converterpage')
+def converterpage():
+   return render_template('convert.html')
+
 if __name__ == '__main__':
    app.run(port=5000)
