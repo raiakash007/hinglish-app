@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 import requests
 import json
 app = Flask(__name__)
@@ -20,6 +20,20 @@ def home():
 @app.route('/converterpage')
 def converterpage():
    return render_template('convert.html')
+
+@app.route('/processconverter', methods = ['POST'])
+def processconverter():
+   input_text = request.form['input_text']
+
+   url = "http://127.0.0.1:5001/apiprocessconverter"
+   headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'Accept': 'text/plain',
+   }
+   payload = {"data":input_text}
+   response = requests.request("POST", url, data=json.dumps(payload), headers=headers)
+   return render_template('convert.html',res=response.text,inpu=input_text)
 
 if __name__ == '__main__':
    app.run(port=5000)
